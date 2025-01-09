@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Post</title>
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        window.onload = function() {
+        };
+    </script>
+</head>
+<body>
+    <h1>Criar Novo Post</h1>
+    <form action="/criar" method="POST">
+        <label for="title">Título</label>
+        <input type="text" id="title" name="title" required>
+        <br>
+        <label for="body">Conteúdo do Post</label>
+        <textarea id="body" name="body" required></textarea>
+        <br>
+        <button type="submit">Salvar Post</button>
+    </form>
+    <br>
+    <a href="/">Voltar para a página inicial</a>
+</body>
+</html>

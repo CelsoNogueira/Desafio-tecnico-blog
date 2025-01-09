@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        window.onload = function() {
+            const postId = window.location.pathname.split("/").pop();
+            fetch(`/post/${postId}`)
+                .then(response => response.json())
+                .then(post => {
+                    document.getElementById('postTitle').textContent = post.title;
+                    document.getElementById('postBody').textContent = post.body;
+                    document.getElementById('postDate').textContent = `Publicado em: ${post.created_at}`;
+                })
+                .catch(error => console.error('Erro ao carregar o post:', error));
+        }
+    </script>
+</head>
+<body>
+    <h1 id="postTitle"></h1>
+    <p id="postBody"></p>
+    <small id="postDate"></small><br>
+    <a href="/">Voltar</a>
+</body>
+</html>

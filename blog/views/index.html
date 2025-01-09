@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog de Culinária</title>
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        window.onload = function() {
+            fetch('/posts')
+                .then(response => response.json())
+                .then(data => {
+                    const postList = document.getElementById('postList');
+                    data.forEach(post => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `
+                            <a href="/post/${post.id}">${post.title}</a>
+                            <br>
+                            <small>Publicado em: ${post.created_at}</small>`;
+                        postList.appendChild(li);
+                    });
+                });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Blog de Culinária</h1>
+    </header>
+
+    <main class="container">
+        <ul id="postList" class="post-list"></ul>
+        <div class="create-post">
+            <a href="/criar" class="button">Criar Novo Post</a>
+        </div>
+    </main>
+</body>
+</html>
