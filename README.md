@@ -10,7 +10,7 @@ Certifique-se de ter as seguintes dependências instaladas:
 - npm
 - SQLite3
 - Express
-- 
+  
 ### Passos para rodar o projeto
 1. Clone o repositório:
 2. Instale as dependencias: npm install
